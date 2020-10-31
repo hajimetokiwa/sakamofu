@@ -77,8 +77,6 @@ window.onload = function () {
 		sakamofuImg.image = game.assets[sakamofuImgUrl];			//読み込む画像の相対パスを指定。　事前にgame.preloadしてないと呼び出せない
 		mainScene.addChild(sakamofuImg);					//mainSceneにこのぞう山画像を貼り付ける  
 
-		game.assets[nobideshiSndUrl].play();
-		game.assets[nobideshiSndUrl].loop = true;
 		
 		sakamofuImg.ontouchend = function () {				//ぞう山ボタンをタッチした（タッチして離した）時にこの中の内容を実行する
 			point++;									//Pointを1増やす
@@ -103,8 +101,9 @@ window.onload = function () {
 
 		};
 
-
-
+		game.assets[nobideshiSndUrl].play();
+		game.assets[nobideshiSndUrl].loop = true;
+		
 		///////////////////////////////////////////////////
 		//メインループ　ここに主要な処理をまとめて書こう
 		game.onenterframe = function () {
