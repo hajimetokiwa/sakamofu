@@ -61,6 +61,9 @@ window.onload = function () {
 		haikeimoriImg.image = game.assets["haikeimori_sozai.png"];
 		mainScene.addChild(haikeimoriImg);
 		
+		game.assets[nobideshiSndUrl].play();
+		game.assets[nobideshiSndUrl].loop = true;
+		
 		//ポイント表示テキスト
 		const scoreText = new Label(); 					//テキストはLabelクラス
 		scoreText.font = "bold 20px Meiryo";				//フォントはメイリオ 20px 変えたかったらググってくれ
