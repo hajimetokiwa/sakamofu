@@ -179,6 +179,10 @@ window.onload = function () {
 			state = 0;
 			game.popScene();						//endSceneシーンを外す
 			game.pushScene(mainScene);					//mainSceneシーンを入れる
+			
+			game.assets[nobideshiSndUrl].play();
+			game.assets[nobideshiSndUrl].loop = true;
+		
 		};
 
 		//ツイートボタン
