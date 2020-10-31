@@ -102,7 +102,7 @@ window.onload = function () {
 		};
 
 		game.assets[nobideshiSndUrl].play();
-	
+		game.assets[nobideshiSndUrl].loop = true;
 		
 		///////////////////////////////////////////////////
 		//メインループ　ここに主要な処理をまとめて書こう
