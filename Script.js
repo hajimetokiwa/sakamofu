@@ -55,7 +55,9 @@ window.onload = function () {
 		game.pushScene(mainScene);  					//mainSceneシーンオブジェクトを画面に設置
 		mainScene.backgroundColor = "white"; 			//mainSceneシーンの背景は黒くした
 
-	
+		game.assets[nobideshiSndUrl].play();
+		game.assets[nobideshiSndUrl].loop = true;
+		
 		// 奥の背景画像を設定
 		const haikeimoriImg = new Sprite(400, 500);
 		haikeimoriImg.image = game.assets["haikeimori_sozai.png"];
@@ -77,8 +79,6 @@ window.onload = function () {
 		sakamofuImg.image = game.assets[sakamofuImgUrl];			//読み込む画像の相対パスを指定。　事前にgame.preloadしてないと呼び出せない
 		mainScene.addChild(sakamofuImg);					//mainSceneにこのぞう山画像を貼り付ける  
 
-		game.assets[nobideshiSndUrl].play();
-		game.assets[nobideshiSndUrl].loop = true;
 		
 		sakamofuImg.ontouchend = function () {				//ぞう山ボタンをタッチした（タッチして離した）時にこの中の内容を実行する
 			point++;									//Pointを1増やす
