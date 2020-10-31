@@ -81,7 +81,7 @@ window.onload = function () {
 		sakamofuImg.ontouchend = function () {				//ぞう山ボタンをタッチした（タッチして離した）時にこの中の内容を実行する
 			point++;									//Pointを1増やす
 			game.assets[clickSndUrl].clone().play();		//クリックの音を鳴らす。
-			
+			game.assets[nobideshiSndUrl].loop = true;
 			
 			//クリックしたのでぞう山画像のｘ位置を戻す
 			this.x = -200;							//this.xって何？と思った方、Zoyamaの関数内でぞう山の座標を動かすときにはthisを使います。
@@ -101,8 +101,6 @@ window.onload = function () {
 
 		};
 
-		game.assets[nobideshiSndUrl].play();
-		game.assets[nobideshiSndUrl].loop = true;
 		
 		///////////////////////////////////////////////////
 		//メインループ　ここに主要な処理をまとめて書こう
