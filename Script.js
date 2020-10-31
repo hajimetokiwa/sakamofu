@@ -55,14 +55,11 @@ window.onload = function () {
 		game.pushScene(mainScene);  					//mainSceneシーンオブジェクトを画面に設置
 		mainScene.backgroundColor = "white"; 			//mainSceneシーンの背景は黒くした
 
-		
+	
 		// 奥の背景画像を設定
 		const haikeimoriImg = new Sprite(400, 500);
 		haikeimoriImg.image = game.assets["haikeimori_sozai.png"];
 		mainScene.addChild(haikeimoriImg);
-		
-		game.assets[nobideshiSndUrl].play();
-		game.assets[nobideshiSndUrl].loop = true;
 		
 		//ポイント表示テキスト
 		const scoreText = new Label(); 					//テキストはLabelクラス
@@ -80,11 +77,13 @@ window.onload = function () {
 		sakamofuImg.image = game.assets[sakamofuImgUrl];			//読み込む画像の相対パスを指定。　事前にgame.preloadしてないと呼び出せない
 		mainScene.addChild(sakamofuImg);					//mainSceneにこのぞう山画像を貼り付ける  
 
-		
+
 		sakamofuImg.ontouchend = function () {				//ぞう山ボタンをタッチした（タッチして離した）時にこの中の内容を実行する
 			point++;									//Pointを1増やす
 			game.assets[clickSndUrl].clone().play();		//クリックの音を鳴らす。
-			
+
+			game.assets[nobideshiSndUrl].play();
+			game.assets[nobideshiSndUrl].loop = true;
 			
 			//クリックしたのでぞう山画像のｘ位置を戻す
 			this.x = -200;							//this.xって何？と思った方、Zoyamaの関数内でぞう山の座標を動かすときにはthisを使います。
@@ -104,7 +103,8 @@ window.onload = function () {
 
 		};
 
-		
+
+
 		///////////////////////////////////////////////////
 		//メインループ　ここに主要な処理をまとめて書こう
 		game.onenterframe = function () {
