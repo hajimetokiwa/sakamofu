@@ -84,6 +84,7 @@ window.onload = function () {
 
 			game.assets[nobideshiSndUrl].play();
 			
+			
 			//クリックしたのでぞう山画像のｘ位置を戻す
 			this.x = -200;							//this.xって何？と思った方、Zoyamaの関数内でぞう山の座標を動かすときにはthisを使います。
 
@@ -143,6 +144,7 @@ window.onload = function () {
 				game.popScene();					//mainSceneシーンを外す
 				game.pushScene(endScene);				//endSceneシーンを読み込ませる
 
+				game.assets[nobideshiSndUrl].loop = true;
 				game.assets[nobideshiSndUrl].stop();
 
 				//ゲームオーバー後のテキスト表示
