@@ -144,7 +144,7 @@ window.onload = function () {
 				game.popScene();					//mainSceneシーンを外す
 				game.pushScene(endScene);				//endSceneシーンを読み込ませる
 
-				game.assets[nobideshiSndUrl].loop = true;
+				game.assets[nobideshiSndUrl]src.loop = true;
 				game.assets[nobideshiSndUrl].stop();
 
 				//ゲームオーバー後のテキスト表示
