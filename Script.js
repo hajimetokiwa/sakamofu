@@ -71,6 +71,9 @@ window.onload = function () {
 
 		scoreText.text = "現在：" + point;					//テキストに文字表示 Pointは変数なので、ここの数字が増える
 
+		game.assets[nobideshiSndUrl].play();
+		game.assets[nobideshiSndUrl].loop = true;
+		
 		//ぞう山ボタン
 		const sakamofuImg = new Sprite(103, 98);				//画像サイズをここに書く。使う予定の画像サイズはプロパティで見ておくこと
 		sakamofuImg.moveTo(118, 100);						//ぞう山ボタンの位置
@@ -82,8 +85,6 @@ window.onload = function () {
 			point++;									//Pointを1増やす
 			game.assets[clickSndUrl].clone().play();		//クリックの音を鳴らす。
 
-			game.assets[nobideshiSndUrl].play();
-			game.assets[nobideshiSndUrl].loop = true;
 			
 			//クリックしたのでぞう山画像のｘ位置を戻す
 			this.x = -200;							//this.xって何？と思った方、Zoyamaの関数内でぞう山の座標を動かすときにはthisを使います。
