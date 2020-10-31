@@ -55,8 +55,6 @@ window.onload = function () {
 		game.pushScene(mainScene);  					//mainSceneシーンオブジェクトを画面に設置
 		mainScene.backgroundColor = "white"; 			//mainSceneシーンの背景は黒くした
 
-		game.assets[nobideshiSndUrl].play();
-		game.assets[nobideshiSndUrl].loop = true;
 		
 		// 奥の背景画像を設定
 		const haikeimoriImg = new Sprite(400, 500);
@@ -84,6 +82,7 @@ window.onload = function () {
 			point++;									//Pointを1増やす
 			game.assets[clickSndUrl].clone().play();		//クリックの音を鳴らす。
 			
+			game.assets[nobideshiSndUrl].play();
 			
 			//クリックしたのでぞう山画像のｘ位置を戻す
 			this.x = -200;							//this.xって何？と思った方、Zoyamaの関数内でぞう山の座標を動かすときにはthisを使います。
